@@ -6,91 +6,79 @@
 <meta name="description" content="Madison Cole — environmental economist and Oxford DPhil candidate.">
 <title>Madison Cole</title>
 <link rel="canonical" href="https://madisonjcole.github.io/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: AcademicPages-style — slim top nav, sticky profile sidebar left, single reading column right */
+/* Matches AcademicPages (jessiexlu.github.io): system sans, white ground, slate text, muted-blue links */
 :root {
   --bg: #ffffff;
-  --fg: #1f2622;
-  --muted: #5f6b64;
-  --rule: #dfe5e1;
-  --accent: #2f6b4f;
-  --accent-soft: #eef4f0;
-  --serif: "Spectral", Georgia, "Times New Roman", serif;
-  --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fg: #212f3c;
+  --muted: #7a8288;
+  --rule: #bcc0c3;
+  --rule-soft: #e4e6e7;
+  --accent: #6082b6;
+  --accent-hover: #486289;
+  --avatar-bg: #eef1f6;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #141917; --fg: #e3e9e5; --muted: #9aa8a0; --rule: #2a332e;
-    --accent: #7fbf9c; --accent-soft: #1c2621; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #141917; --fg: #e3e9e5; --muted: #9aa8a0; --rule: #2a332e;
-  --accent: #7fbf9c; --accent-soft: #1c2621; color-scheme: dark;
-}
-body { background: var(--bg); color: var(--fg); font-family: var(--serif); font-size: 17px; line-height: 1.6; }
+html { font-size: 16px; }
+@media (min-width: 768px) { html { font-size: 18px; } }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 1rem; line-height: 1.5; }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { color: var(--accent-hover); text-decoration: underline; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 
-.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
-header.top { border-bottom: 1px solid var(--rule); }
-header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; flex-wrap: wrap; }
-.site-name { font-family: var(--sans); font-weight: 600; font-size: 15px; color: var(--fg); letter-spacing: .01em; }
-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
-nav a { font-family: var(--sans); font-size: 14px; color: var(--muted); padding-bottom: 4px; border-bottom: 2px solid transparent; }
-nav a:hover { color: var(--fg); text-decoration: none; }
-nav a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--accent); }
+header.top .wrap { display: flex; align-items: center; gap: 1.5em; padding-block: 1em; flex-wrap: wrap; }
+.site-name { font-weight: bold; font-size: 1rem; color: var(--fg); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.2em; }
+nav a { font-size: 1rem; color: var(--fg); }
+nav a:hover { color: var(--muted); text-decoration: none; }
+nav a[aria-current="page"] { color: var(--fg); }
 
-.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px; padding-block: 48px 72px; }
+.layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 3em; padding-block: 2em 4em; }
 
-aside.profile { position: sticky; top: 32px; align-self: start; display: flex; flex-direction: column; gap: 14px; font-family: var(--sans); font-size: 14px; }
-.avatar { width: 132px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; background: var(--accent-soft); border: 1px solid var(--rule); display: grid; place-items: center; font-family: var(--serif); font-size: 44px; color: var(--accent); }
-.profile h2 { font-family: var(--serif); font-weight: 600; font-size: 22px; margin: 4px 0 0; line-height: 1.2; }
-.profile .role { color: var(--muted); line-height: 1.45; margin: 0; }
-.profile ul { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.profile li { display: flex; gap: 10px; align-items: baseline; color: var(--muted); overflow-wrap: anywhere; }
-.profile li svg { flex: none; width: 14px; height: 14px; stroke: var(--muted); fill: none; stroke-width: 1.6; position: relative; top: 2px; }
-.coords { font-size: 12px; letter-spacing: .06em; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 10px; border-top: 1px solid var(--rule); }
+aside.profile { position: sticky; top: 2em; align-self: start; display: flex; flex-direction: column; gap: 0.6em; font-size: 0.75em; line-height: 1.5; }
+.avatar { width: 175px; aspect-ratio: 1; max-width: 100%; border-radius: 50%; background: var(--avatar-bg); border: 1px solid var(--rule-soft); display: grid; place-items: center; font-size: 3.2em; color: var(--accent); object-fit: cover; }
+.profile h2 { font-weight: bold; font-size: 1.333em; margin: 0.4em 0 0; line-height: 1.2; }
+.profile .role { color: var(--fg); margin: 0.3em 0 0; }
+.profile ul { list-style: none; margin: 0.4em 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.5em; }
+.profile li { display: flex; gap: 0.6em; align-items: baseline; color: var(--fg); overflow-wrap: anywhere; }
+.profile li svg { flex: none; width: 13px; height: 13px; stroke: var(--fg); fill: none; stroke-width: 1.8; position: relative; top: 2px; }
+.coords { display: none; }
 
-main { min-width: 0; max-width: 680px; }
-h1 { font-weight: 500; font-size: 38px; line-height: 1.15; margin: 0 0 28px; text-wrap: balance; }
-h3.sec { font-family: var(--sans); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 44px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
-h3.sec:first-of-type { margin-top: 0; }
-p { margin: 0 0 1em; }
+main { min-width: 0; max-width: 760px; }
+h1 { font-weight: bold; font-size: 1.563em; line-height: 1.2; margin: 0 0 0.8em; }
+h3.sec { font-size: 1.25em; font-weight: bold; line-height: 1.2; margin: 2em 0 0.8em; padding-bottom: 0.5em; border-bottom: 1px solid var(--rule); }
+h3.sec:first-of-type { margin-top: 0.5em; }
+p { margin: 0 0 1.3em; }
 
-.paper { margin-bottom: 30px; }
-.paper .t { font-weight: 600; font-size: 18px; line-height: 1.35; }
-.paper .note { font-style: italic; color: var(--muted); }
-.paper p { margin-top: 6px; color: var(--fg); }
-.paper .meta { font-family: var(--sans); font-size: 13px; color: var(--muted); margin-top: 2px; }
-.short { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.short li .t { font-weight: 600; }
+.paper { margin-bottom: 1.6em; }
+.paper .t { font-weight: bold; }
+.paper .note { font-weight: normal; font-style: italic; }
+.paper p { margin: 0.6em 0 0; }
+.short { padding-left: 1.2em; margin: 0; display: flex; flex-direction: column; gap: 0.5em; }
+.short li .t { font-weight: bold; }
 
-.cv-row { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 20px; margin-bottom: 18px; }
-.cv-row .yr { font-family: var(--sans); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
-.cv-row .what { font-weight: 600; }
-.cv-row .where { color: var(--muted); }
+.cv-row { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 1em; margin-bottom: 0.9em; }
+.cv-row .yr { color: var(--muted); font-variant-numeric: tabular-nums; }
+.cv-row .what { font-weight: bold; }
+.cv-row .where { color: var(--fg); }
 
-.lede { font-size: 19px; }
-.interests { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
-.interests li { font-family: var(--sans); font-size: 13px; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 999px; color: var(--muted); }
+.lede { font-size: 1em; }
+.interests { padding-left: 1.2em; margin: 0; }
+.interests li { margin-bottom: 0.25em; }
 
-footer { border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 12px; color: var(--muted); }
-footer .wrap { padding-block: 20px; }
+footer { border-top: 1px solid var(--rule-soft); font-size: 0.75em; color: var(--muted); margin-top: 2em; }
+footer .wrap { padding-block: 1.5em; }
 
 @media (max-width: 760px) {
-  .layout { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-block: 28px 56px; }
-  aside.profile { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px; }
-  .avatar { width: 72px; font-size: 26px; }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 2em; padding-block: 1.2em 3em; }
+  aside.profile { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1em; font-size: 0.85em; }
+  .avatar { width: 80px; font-size: 1.8em; }
   .profile .id { flex: 1; min-width: 0; }
-  .profile ul, .coords { flex-basis: 100%; }
-  nav ul { gap: 20px; }
-  h1 { font-size: 30px; }
-  .cv-row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .profile ul { flex-basis: 100%; }
+  .cv-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
 }
 </style>
 </head>
@@ -128,7 +116,7 @@ footer .wrap { padding-block: 20px; }
       <h1>About</h1>
       <p class="lede">I'm an environmental economist working on agricultural policy, land use and climate resilience.</p>
       <p>I'm a part-time DPhil candidate in Geography and the Environment at the University of Oxford, where my thesis studies how agricultural support policies trade off production, the environment and rural welfare. My work uses natural experiments, remote sensing and administrative and survey data.</p>
-      <p>I'm also co-founder of Mode Economics, a climate adaptation and resilience economics advisory, where I've worked on climate finance, public financial management, environmental insurance policy and fiscal resilience in the Pacific. Before that I worked at McKinsey &amp; Company, held a World Economic Forum fellowship, and worked on environmental policy at the National Audubon Society.</p>
+      <p>I'm also co-founder of Mode Economics, a climate adaptation and resilience economics advisory, where I've worked on climate finance, public financial management, environmental insurance policy and fiscal resilience in the Pacific. Before that I was an economist at Vivid Economics and McKinsey &amp; Company, held a World Economic Forum fellowship, and worked on environmental policy at the National Audubon Society.</p>
       <p>I hold an MSc in Environmental Economics and Climate Change from the London School of Economics, and an MA and BA in Economics from the University of Montana.</p>
       <h3 class="sec">Research interests</h3>
       <ul class="interests">
@@ -153,6 +141,27 @@ footer .wrap { padding-block: 20px; }
         <p>This paper studies whether public food stocks and related policies cushion consumers when severe weather disrupts production and transport, and how those buffers compare with other support types in building resilience.</p>
       </div>
 
+      <h3 class="sec">Completed Research</h3>
+      <div class="paper">
+        <div class="t"><a href="Cole_2019_LSE_Dissertation.pdf">Restoring Natural Fire and the Cost of Suppression in American Wilderness: Evidence from a Policy Experiment</a> <span class="note">(MSc dissertation, LSE, 2019)</span></div>
+        <p>A century of total fire suppression in the American West left forests overgrown and fires more severe and costly. Under wildland fire use (WFU), naturally ignited fires in Wilderness Areas are monitored and allowed to burn as fuel treatment rather than put out. This dissertation estimates the effect of that policy on the suppression cost of later fires that overlap previously burned areas, using ignition cause and daily weather conditions as instrumental variables for treatment. Planned treatment under WFU reduced total and per-hectare suppression costs, though not significantly, while unplanned wildfire produced significant cost reductions, suggesting WFU applied at larger scale could do the same. Effects on fire intensity and fuel availability were inconclusive.</p>
+      </div>
+      <div class="paper">
+        <div class="t">The Role of Behaviour in the Effectiveness of Indoor Air Pollution Interventions <span class="note">(MA thesis, University of Montana, 2017)</span></div>
+        <p>Using panel data from a randomized placebo-controlled trial of wood stove changeouts and air filters, this thesis tests whether each intervention improved indoor air quality and whether households changed their behaviour in ways that offset it. Air filters improved indoor air quality while cleaner stoves did not, and behavioural responses did not differ across treatment groups.</p>
+      </div>
+
+      <h3 class="sec">Reports and Policy Publications</h3>
+      <ul class="short">
+        <li>World Economic Forum (2023). <a href="https://www3.weforum.org/docs/WEF_Biodiversity_Credits_A_Guide_to_Support_Early_Use_with_High_Integrity_2023.pdf">Biodiversity Credits: A Guide to Support Early Use with High Integrity</a>. White Paper.</li>
+        <li>World Economic Forum (2023). <a href="https://www3.weforum.org/docs/WEF_2023_Biodiversity_Credits_Demand_Analysis_and_Market_Outlook.pdf">Biodiversity Credits: Demand Analysis and Market Outlook</a>. Insight Report.</li>
+        <li>NatureFinance (2022). <a href="https://www.naturefinance.net/wp-content/uploads/2022/09/FinanceNatureandFoodTransitions.pdf">Finance, Nature, and Food Transitions</a>. Report.</li>
+        <li>The World Bank (2021). <a href="https://documents1.worldbank.org/curated/en/394231631778039389/pdf/Jamaica-s-Long-Term-Climate-Change-Strategy-Recommendations.pdf">Jamaica's Long-Term Climate Change Strategy Recommendations</a>. Final Report.</li>
+        <li>Ethiopia Ministry of Finance (2021). <a href="https://www.opml.co.uk/files/Publications/a2422-building-resilience-ethiopia/guidelines-disaster-related-fiscal-risk.pdf?noredirect=1">Guidelines for Quantifying Disaster-Related Fiscal Risks in Ethiopia</a>. Report.</li>
+        <li>World Economic Forum (2021). <a href="https://www3.weforum.org/docs/WEF_Antimicrobial_Resistance_and_Water_2021.pdf">Antimicrobial Resistance and Water: The Risks and Costs for Economies and Societies</a>. Briefing Paper.</li>
+        <li>Orbitas (2020). <a href="https://orbitas.finance/wp-content/uploads/2020/11/Transition-Scenarios-for-Tropical-Agriculture_Final-2020.pdf">Transition Scenarios for Tropical Agriculture</a>. Report.</li>
+      </ul>
+
       <h3 class="sec">Selected Policy Work</h3>
       <ul class="short">
         <li><span class="t">Extreme heat cost-benefit tool</span> — city-level heat impacts on informal women workers in Ahmedabad, Bangkok, Buenos Aires, Freetown and Monterrey.</li>
@@ -164,21 +173,35 @@ footer .wrap { padding-block: 20px; }
 
     <section id="view-cv" data-section="cv" hidden>
       <h1>CV</h1>
+      <p><a href="Maddie_Cole_CV.pdf">Download my CV (PDF)</a></p>
+
       <h3 class="sec">Education</h3>
       <div class="cv-row"><div class="yr">2026–</div><div><div class="what">DPhil, Geography and the Environment</div><div class="where">University of Oxford · St Hilda's College</div></div></div>
-      <div class="cv-row"><div class="yr">2019</div><div><div class="what">MSc, Environmental Economics &amp; Climate Change</div><div class="where">London School of Economics</div></div></div>
+      <div class="cv-row"><div class="yr">2019</div><div><div class="what">MSc, Environmental Economics &amp; Climate Change</div><div class="where">London School of Economics · Best Overall Performance</div></div></div>
       <div class="cv-row"><div class="yr">2017</div><div><div class="what">MA, Economics</div><div class="where">University of Montana</div></div></div>
       <div class="cv-row"><div class="yr">2014</div><div><div class="what">BA, Economics</div><div class="where">University of Montana</div></div></div>
 
-      <h3 class="sec">Experience</h3>
-      <div class="cv-row"><div class="yr">—</div><div><div class="what">Co-founder</div><div class="where">Mode Economics</div></div></div>
-      <div class="cv-row"><div class="yr">—</div><div><div class="what">Fellow (secondment from McKinsey)</div><div class="where">World Economic Forum</div></div></div>
-      <div class="cv-row"><div class="yr">—</div><div><div class="what">Consultant</div><div class="where">McKinsey &amp; Company</div></div></div>
-      <div class="cv-row"><div class="yr">—</div><div><div class="what">Environmental policy</div><div class="where">National Audubon Society</div></div></div>
-      <div class="cv-row"><div class="yr">—</div><div><div class="what">Intern</div><div class="where">United States Senate</div></div></div>
+      <h3 class="sec">Professional Experience</h3>
+      <div class="cv-row"><div class="yr">2025–</div><div><div class="what">Co-founder and Engagement Manager</div><div class="where">Mode Economics</div></div></div>
+      <div class="cv-row"><div class="yr">2022–2024</div><div><div class="what">Associate (Senior Economist)</div><div class="where">McKinsey &amp; Company (formerly Vivid Economics), London</div></div></div>
+      <div class="cv-row"><div class="yr">2023–2024</div><div><div class="what">Project Fellow</div><div class="where">World Economic Forum, Geneva</div></div></div>
+      <div class="cv-row"><div class="yr">2020–2022</div><div><div class="what">Economist</div><div class="where">Vivid Economics, London</div></div></div>
+      <div class="cv-row"><div class="yr">2019–2020</div><div><div class="what">Analyst</div><div class="where">Vivid Economics, London</div></div></div>
+      <div class="cv-row"><div class="yr">2018</div><div><div class="what">Climate Change Fellow</div><div class="where">National Audubon Society, Washington DC</div></div></div>
+      <div class="cv-row"><div class="yr">2017</div><div><div class="what">Intern</div><div class="where">Office of U.S. Senator Jon Tester, United States Senate</div></div></div>
+
+      <h3 class="sec">Teaching</h3>
+      <div class="cv-row"><div class="yr">2015–2016</div><div><div class="what">Graduate Teaching Assistant, Introductory and Intermediate Microeconomics</div><div class="where">University of Montana</div></div></div>
+
+      <h3 class="sec">Awards</h3>
+      <div class="cv-row"><div class="yr">2019</div><div>Best Overall Performance, MSc Environmental Economics &amp; Climate Change, LSE</div></div>
+      <div class="cv-row"><div class="yr">2018</div><div>Grow with Google Challenge Scholarship &amp; Nanodegree Scholarship, Google–Udacity</div></div>
+      <div class="cv-row"><div class="yr">2014–2016</div><div>Graduate Teaching Assistantship, University of Montana</div></div>
+      <div class="cv-row"><div class="yr">2012–2014</div><div>Dean's List Scholar, University of Montana</div></div>
+      <div class="cv-row"><div class="yr">2013</div><div>Excellence in Photojournalism Scholarship, Melvin &amp; Myrtle Lord Foundation</div></div>
 
       <h3 class="sec">Skills</h3>
-      <p>R (causal inference, spatial analysis), remote sensing, LaTeX, data visualization.</p>
+      <p>R (advanced, including spatial analysis), Stata, GAMS, ArcGIS/QGIS, Excel/VBA, Git, LaTeX. English (native), French (B2).</p>
     </section>
   </main>
 </div>
